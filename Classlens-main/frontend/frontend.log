@@ -1,0 +1,42 @@
+
+> frontend@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.10 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.2.227:3000
+✓ Ready in 373ms
+
+○ Compiling / ...
+ GET / 200 in 3.3s (next.js: 3.2s, application-code: 161ms)
+ GET /enroll 200 in 246ms (next.js: 231ms, application-code: 15ms)
+ GET /firebase-messaging-sw.js 404 in 267ms (next.js: 230ms, application-code: 38ms)
+ GET /attendance 200 in 218ms (next.js: 207ms, application-code: 11ms)
+ GET /enroll 200 in 28ms (next.js: 9ms, application-code: 20ms)
+ GET /enroll 200 in 62ms (next.js: 11ms, application-code: 51ms)
+ GET /firebase-messaging-sw.js 404 in 37ms (next.js: 4ms, application-code: 33ms)
+ GET /attendance 200 in 18ms (next.js: 5ms, application-code: 13ms)
+ GET /attendance 200 in 13ms (next.js: 6ms, application-code: 7ms)
+ GET /attendance 200 in 14ms (next.js: 1786µs, application-code: 12ms)
+ GET /attendance 200 in 5ms (next.js: 1896µs, application-code: 3ms)
+ GET /attendance 200 in 12ms (next.js: 1319µs, application-code: 11ms)
+ GET /attendance 200 in 32ms (next.js: 1955µs, application-code: 30ms)
+ GET /firebase-messaging-sw.js 404 in 47ms (next.js: 15ms, application-code: 32ms)
+[browser] Uncaught TypeError: Cannot read properties of undefined (reading 'map')
+    at AttendancePage (src/app/attendance/page.tsx:168:29)
+  166 |                   />
+  167 |                   
+> 168 |                   {results?.detected.map((face, idx) => (
+      |                             ^
+  169 |                     <div
+  170 |                       key={idx}
+  171 |                       className="absolute group transition-all duration-300 ease-in-out h...
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /attendance 200 in 33ms (next.js: 5ms, application-code: 28ms)
+✓ Compiled in 39ms
+ GET /firebase-messaging-sw.js 404 in 36ms (next.js: 4ms, application-code: 31ms)
+ GET /attendance 200 in 11ms (next.js: 5ms, application-code: 6ms)
+ GET /attendance 200 in 21ms (next.js: 4ms, application-code: 16ms)
+ GET /attendance 200 in 27ms (next.js: 1523µs, application-code: 25ms)
+ GET /firebase-messaging-sw.js 404 in 28ms (next.js: 3ms, application-code: 25ms)
+[?25h

@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+/* Remove the dark mode forcing on body */
+body {
+  min-height: 100vh;
+}

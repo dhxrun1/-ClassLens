@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+python-multipart
+numpy
+opencv-python-headless
+insightface
+onnxruntime
+scipy
