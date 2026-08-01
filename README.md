@@ -1,110 +1,224 @@
-# -ClassLens
-API-first facial recognition attendance system built with FastAPI, Next.js, InsightFace, and SQLite for seamless student enrollment, face verification, and automated attendance tracking.
+# 🎓 ClassLens
 
-🚀 Quick Start
+**API-first facial recognition attendance system** built with **FastAPI, Next.js, InsightFace, and SQLite** for seamless student enrollment, face verification, and automated attendance tracking.
 
-Prerequisites
+---
 
-Python 3.10 or higher
-(Optional) TensorFlow GPU dependencies for accelerated ML performance
-Installation & Setup
+## 🚀 Quick Start
 
-Clone the repository
+### Prerequisites
 
-git clone https://github.com/yourusername/lens-attendance.git
-cd lens-attendance
-Create a Python virtual environment
+- Python 3.10+
+- Node.js 18+
+- npm
+- (Optional) TensorFlow GPU dependencies for faster ML performance
 
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/ClassLens.git
+cd ClassLens
+```
+
+### 2. Create a Virtual Environment
+
+```bash
 python3 -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-Install dependencies
+```
 
+Activate it:
+
+**macOS/Linux**
+
+```bash
+source venv/bin/activate
+```
+
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+### 3. Install Backend Dependencies
+
+```bash
 pip install -r backend/requirements.txt
-Run the Backend Server
+```
 
+### 4. Run the Backend
+
+```bash
 python -m backend.main
-The API will be available at http://localhost:8000
+```
 
-Run the Frontend Open a new terminal, activate the virtual environment, and run:
+Backend API:
 
+```
+http://localhost:8000
+```
+
+---
+
+### 5. Run the Frontend
+
+Open a new terminal.
+
+```bash
 cd frontend
 npm install
 npm run dev
-The dashboard will be available at http://localhost:3000
+```
 
-🏗️ Architecture
+Frontend Dashboard:
 
-The system follows a standard Client-Server architecture with a clear separation of concerns.
+```
+http://localhost:3000
+```
 
-Frontend (Next.js)
+---
 
-UI/UX: Dark mode, glassmorphism design language.
-Pages:
-Dashboard (/): Overview of operations.
-Enrollment (/enroll): Form to register new students with their photos.
-Attendance (/attendance): Upload class photos to detect and verify students.
-Backend (FastAPI)
+# 🏗️ Architecture
 
-Database: SQLite (in-memory or file-based) for persistence.
-ML Integration: Uses the deepface library for high-accuracy facial recognition (ArcFace algorithm).
-📂 Project Structure
+The project follows a **Client-Server Architecture**.
 
-lens-attendance/
-├── backend/                   # FastAPI Application
-│   ├── main.py                # Application entry point & configuration
-│   ├── database.py            # Database connection & session management
-│   ├── models.py              # SQLAlchemy ORM models (Student, Attendance, etc.)
-│   ├── ml_service.py          # Core ML logic: Face detection & verification
-│   └── routers/               # API endpoint handlers
-│       ├── enrollment.py      # Student registration endpoints
-│       └── attendance.py      # Attendance tracking endpoints
-├── frontend/                  # Next.js Application
-│   ├── app/                   # Page routes
-│   ├── components/            # UI components
-│   └── styles/                # Tailwind CSS & global styles
-├── LICENSE                    # MIT License
-└── README.md                  # This file
-📋 API Reference
+## Frontend (Next.js)
 
-Enrollment Endpoints
+- Dashboard
+- Student Enrollment
+- Attendance
+- Modern Dark UI
+- Glassmorphism Design
 
-POST /enroll-student Registers a new student.
+## Backend (FastAPI)
 
-Request: multipart/form-data
-Fields:
-student_id (str): Unique identifier for the student.
-name (str): Full name of the student.
-level (str): Academic level (e.g., "100L").
-department (str): Department/Faculty (e.g., "Computer Science").
-files (list[File]): One or more images of the student's face.
-Response: 200 OK with success message and database ID.
-Attendance Endpoints
+- REST API
+- Student Management
+- Attendance Processing
+- Face Recognition
+- SQLite Database
 
-POST /detect-faces Detects faces in an uploaded image.
+---
 
-Request: multipart/form-data
-Fields:
-file (File): Image to analyze.
-threshold (float, optional): Confidence threshold for matching (default: 0.75).
-Response: 200 OK with detected faces and analysis results.
-POST /process-attendance Processes a class photo, identifies students, and records attendance.
+# 📂 Project Structure
 
-Request: multipart/form-data
-Fields:
-lecture_id (str): Identifier for the lecture/class.
-image_file (File): Class photo.
-threshold (float, optional): Matching threshold.
-Response: 200 OK with detailed attendance report including matches and unidentified faces.
-🛠️ Tech Stack
+```text
+ClassLens/
+│
+├── backend/
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── ml_service.py
+│   └── routers/
+│       ├── enrollment.py
+│       └── attendance.py
+│
+├── frontend/
+│   ├── app/
+│   ├── components/
+│   └── styles/
+│
+├── LICENSE
+└── README.md
+```
 
-Backend: Python 3.14, FastAPI, SQLAlchemy
-Machine Learning: DeepFace (ArcFace algorithm)
-Frontend: Next.js 14 (App Router), Tailwind CSS 4
-Database: SQLite
-🤝 Contributing
+---
 
-Contributions are welcome! Please follow the standard Fork -> Branch -> PR workflow.
+# 📋 API Endpoints
 
-📝 License
+## Student Enrollment
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+**POST** `/enroll-student`
+
+Registers a new student.
+
+### Form Data
+
+- student_id
+- name
+- level
+- department
+- files (Face Images)
+
+---
+
+## Face Detection
+
+**POST** `/detect-faces`
+
+Detects faces from an uploaded image.
+
+### Form Data
+
+- file
+- threshold (optional)
+
+---
+
+## Attendance Processing
+
+**POST** `/process-attendance`
+
+Processes a classroom image, identifies students, and records attendance.
+
+### Form Data
+
+- lecture_id
+- image_file
+- threshold (optional)
+
+---
+
+# 🛠️ Tech Stack
+
+### Backend
+
+- FastAPI
+- Python
+- SQLAlchemy
+
+### Frontend
+
+- Next.js 14
+- Tailwind CSS
+
+### Machine Learning
+
+- InsightFace
+- ArcFace
+- DeepFace
+
+### Database
+
+- SQLite
+
+---
+
+# ✨ Features
+
+- Facial Recognition Attendance
+- Student Enrollment
+- Face Verification
+- Attendance Reports
+- REST API
+- Responsive Dashboard
+- FastAPI Backend
+- Next.js Frontend
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create a new branch
+3. Commit your changes
+4. Open a Pull Request
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
